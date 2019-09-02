@@ -1,0 +1,35 @@
+getusuarios:
+    path: /us
+    controller: App\Controller\UsuarioController::getUsuarios
+insertUsr:
+    path : /inus
+    controller: App\Controller\UsuarioController::crearUsuario
+login:
+    path: /
+    controller: App\Controller\UsuarioController::log
+logout:
+    path: /logout
+subirarchivo:
+    path: /formUp
+    controller: App\Controller\ArticuloController::new
+getArt:
+    path: /getArt
+    controller: App\Controller\ArticuloController::getArticulos
+geidus:
+    path: /usid
+    controller: App\Controller\UsuarioController::tomaid
+borrarus:
+    path: /delus/{id}
+    controller: App\Controller\UsuarioController::delUser
+actualizaus:
+    path: /upuser/{id}
+    controller: App\Controller\UsuarioController::upUsuarios
+vistaArt:
+    path: /Home
+    controller: App\Controller\ArticuloController::vista
+delArt:
+    path: /delArt/{id}
+    controller: App\Controller\ArticuloController::delArt
+getArti:
+    path: /getArtid
+    controller: App\Controller\ArticuloController::getArt

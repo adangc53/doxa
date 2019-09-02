@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulos{% endblock %}
+
+{% block body %}
+<br>    
+{% for art in art %}
+<br>    
+<div>
+<div class="card offset-2 col-md-8" >
+  <div class="card-header" style="background-color:black; color:white;">
+    {{ art.titulo }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ art.titulo }}</h5>
+    <p class="card-text">{{ art.Descrip }}.</p>
+    <a href="{{ asset('uploads/brochures/' ~ art.ruta) }}" class="btn btn-primary">See more</a>
+  </div>
+</div>
+ </div>    
+<br>
+        {% endfor %}
+        
+{% endblock %}

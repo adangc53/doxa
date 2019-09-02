@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Usuarios{% endblock %}
+
+{% block body %}
+
+ <br>
+    <h1 class="display-3 text-center">Catalogo de Usuarios</h1>
+    <br>
+    <div class="container">
+        <table class="table">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>id</th>
+                    <th>role</th>
+                    <th>nombre</th>
+                    <th>apellido</th>
+                    <th>email</th>
+                    <th>password</th>
+                    <th></th>
+                </tr>
+            </thead>
+        {% for Usuarios in usuarios %}
+            <tr>
+                <td>{{ Usuarios.id }}</td>
+                <td>{{ Usuarios.role }}</td>
+                <td>{{ Usuarios.nombre }}</td>     
+                <td>{{ Usuarios.apellido }}</td>
+                <td>{{ Usuarios.email }}</td>
+                <td>{{ Usuarios.password }}</td>
+               <td>
+               <a href="{{ path('borrarus',{'id':Usuarios.id}) }}">Borrar</a>
+               <a href="{{ path('actualizaus',{'id':Usuarios.id}) }}">actualiza</a>
+               </td> 
+                
+            </tr> 
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}

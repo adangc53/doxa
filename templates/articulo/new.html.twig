@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<h1 class="display-4 text-center">agreaga nuevo articulo</h1>
+<br>
+<div class="container jumbotron">
+{{ form_start(form,{'attr':{'class':'form'}}) }}
+    
+    <label for="register_ruta" class="h4">Ruta:</label>
+    {{ form_widget(form.ruta,{'attr':{'class':'btn'}}) }}
+    <br>
+     <label for="register_titulo" class="h4">Titulo:</label>
+    {{ form_widget(form.titulo,{'attr':{'class':'form-control'}}) }}
+
+    <label for="register_Descrip" class="h4">descripcion:</label>
+    {{ form_widget(form.Descrip,{'attr':{'class':'form-control'}}) }}
+    
+    <br>    
+     {{ form_widget(form.submit,{'attr':{'class':'btn btn-primary'}}) }}
+{{ form_end(form) }}
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articulos{% endblock %}
+
+{% block body %}
+
+ <br>
+    <h1 class="display-3 text-center">Catalogo De Articulos</h1>
+    <br>
+    <div class="container">
+        <table class="table">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th>id</th>
+                    <th>titulo</th>
+                    <th>Ruta</th>
+                    <th>Descripcion</th>
+                    
+                    
+                    <th></th>
+                </tr>
+            </thead>
+        {% for art in art %}
+            {% if art.iduser == id.id %}
+            <tr>
+                <td>{{ art.id }}</td>
+                <td>{{ art.titulo }}</td>
+                <td>{{ art.ruta }}</td>     
+                <td>{{ art.Descrip }}</td>
+              <td>
+                <a href="{{ path('delArt',{'id':art.id}) }}">Del</a>
+                </td>
+                
+            </tr> 
+            {% endif %}
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}

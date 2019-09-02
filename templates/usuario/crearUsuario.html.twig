@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CrearUsuario{% endblock %}
+{% block body %}
+    <br>
+    <h1 class="display-4 text-center">Nuevo Usuario</h1>
+    <br>    
+    <div class="container jumbotron">
+        {{ form_start(form,{'attr':{'class':'form'}}) }}
+        <label for="register_nombre" class="label">Nombre:</label>
+            {{ form_widget(form.nombre,{'attr':{'class':'form-control'}}) }}
+        <label for="register_apellido" class="label">Apellidos:</label>
+            {{ form_widget(form.apellido,{'attr':{'class':'form-control'}}) }}
+        <label for="register_email" class="label">Correo Electronico:</label>
+            {{ form_widget(form.email,{'attr':{'class':'form-control'}}) }}
+        <label for="register_password" class="label">Contraseña</label>    
+            {{ form_widget(form.password,{'attr':{'class':'form-control'}}) }}
+        <br>
+        {{ form_widget(form.submit,{'attr':{'class':'btn btn-primary'}}) }}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

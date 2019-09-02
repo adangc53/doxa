@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+    <br>
+    <div class="container">  
+        <form class="form" action="{{ path('login') }}" method="POST">
+            <label class="label" for="username">Email: </label>
+            <input class="form-control" type="email" id="username" name="_username" value="{% if last_username is defined %} {{ last_username }} {% endif %}" />
+            
+            <label class="label" for="password">Contraseña: </label>
+            <input class="form-control" type="password" id="password" name="_password" />
+            <br>
+            <input class="btn btn-primary" type="submit" value="accesar">        
+        </form>
+    </div>
+{% endblock %}

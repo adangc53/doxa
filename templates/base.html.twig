@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Doxa - {% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+
+        {% endblock %}
+    </head>
+    <body>
+        {% block navbar %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ path('vistaArt')  }}">Doxa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">   
+                <li class="nav-item">
+                            <a class="nav-link" href="{{ path('vistaArt')  }}">Home</a>
+                        </li>                 
+                  {% if app.user %}
+                  <li class="nav-item">
+                            <a class="nav-link" href="{{ path('getArti')  }}">Articulos</a>
+                        </li>
+                 
+                  <li class="nav-item">
+                            <a class="nav-link" href="{{ path('subirarchivo')  }}">upLoad</a>
+                        </li>
+                    {% if app.user.role == "ROLE_ADMIN" %}    
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('getArt')  }}">catalogo de articulos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('getusuarios')  }}">Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('insertUsr')  }}">AddUser</a>
+                          </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('logout')  }}">Cerrar Sesion</a>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('login')  }}">Accesar</a>
+                        </li>
+                   {% endif %}                                           
+                </ul>            
+            </div>
+        </nav>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+            <script src="{{ asset('js/popper.min.js') }}"></script>
+            <script src="{{ asset('js/boostrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
